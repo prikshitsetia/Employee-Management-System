@@ -1,0 +1,31 @@
+<app-nav-employee></app-nav-employee>
+
+<div class="container mt-5">
+  <div class="card text-center" *ngIf="!this.searchDisplay">
+    <h4>
+      <div class="card-header">{{ personalInfo.name }}</div>
+    </h4>
+    <div class="card-body">
+      <h5 class="card-title">{{ personalInfo.designation }}</h5>
+      <h6 class="card-text p-2">Salary : {{ personalInfo.salary }}</h6>
+      <h6 class="text-primary p-2">{{ personalInfo.email }}</h6>
+      <h6 class="text-success p-2">{{ personalInfo.skills }}</h6>
+    </div>
+    <h4>
+      <div class="card-footer text-muted">
+        Date of Joining : {{ personalInfo.doj }}
+      </div>
+    </h4>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////// -->
+<!-- <div class="middle-container">
+  <div class="profile">
+    <img src="circle-cropped.png" />
+    <h2>{{ personalInfo.name }}</h2>
+    <p class="intro">
+      dksjfhksdfh dshf ksdhfs fhksdf hsdjf hskdjfhskdf skdf
+      skdfhsjfksdfhsdjkhfkjdshf s
+    </p>
+  </div>
+</div> -->

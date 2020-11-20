@@ -1,0 +1,16 @@
+<app-nav-employee></app-nav-employee>
+<div class="container p-2 mt-2">
+  <div *ngFor="let item of searchedData">
+    <div>
+      <div class="card text-center">
+        <div class="card-header">{{ item.name }}</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.designation }}</h5>
+
+          <a href="#" class="btn btn-primary">{{ item.email }}</a>
+        </div>
+        <div class="card-footer text-muted">{{ item.doj }}</div>
+      </div>
+    </div>
+  </div>
+</div>

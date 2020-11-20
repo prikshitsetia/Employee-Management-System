@@ -1,0 +1,50 @@
+<app-nav-employee></app-nav-employee>
+<div class="container">
+  <h1>Update Details</h1>
+  <form
+    class="p-2 mt-2"
+    action=""
+    [formGroup]="updateForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <!-- <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        placeholder="Name"
+      />
+    </div> -->
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="password"
+        placeholder="Password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="sel1">Select list:</label>
+      <select class="form-control" id="sel1" formControlName="skills" multiple>
+        <option *ngFor="let skill of skills" [value]="skill">
+          {{ skill }}
+        </option>
+        <!-- <option value="Python">Python</option>
+        <option value="ReactJS">ReactJS</option>
+        <option value="Angular">Angular</option> -->
+      </select>
+    </div>
+    <small>Hold ctrl key to select multiple items</small>
+    <div class="form-group">
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="submit"
+        [disabled]="!updateForm.valid"
+      >
+        Update
+      </button>
+    </div>
+  </form>
+</div>

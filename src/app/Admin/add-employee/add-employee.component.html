@@ -1,0 +1,155 @@
+<app-nav-admin></app-nav-admin>
+<div class="container my-container">
+  <h1>Add Employee</h1>
+  <form
+    class="p-2 mt-2"
+    action=""
+    [formGroup]="addForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        placeholder="Name"
+      />
+      <small
+        class="form-text text-muted text-danger"
+        *ngIf="
+          addForm.controls.name.touched &&
+          addForm.controls.name.errors?.required
+        "
+        >Name is required</small
+      >
+    </div>
+    <div class="form-group">
+      <label>E-Mail</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="email"
+        placeholder="E-Mail"
+      />
+      <small
+        class="form-text text-muted text-danger"
+        *ngIf="
+          addForm.controls.email.touched &&
+          addForm.controls.email.errors?.required
+        "
+        >E-Mail is required</small
+      >
+    </div>
+    <div class="form-group">
+      <label>Designation</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="designation"
+        placeholder="Designation"
+      />
+      <small
+        class="form-text text-muted text-danger"
+        *ngIf="
+          addForm.controls.designation.touched &&
+          addForm.controls.designation.errors?.required
+        "
+        >Designation is required</small
+      >
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="password"
+        placeholder="Password"
+      />
+      <small
+        class="form-text text-muted text-danger"
+        *ngIf="
+          addForm.controls.password.touched &&
+          addForm.controls.password.errors?.required
+        "
+        >Password is required</small
+      >
+    </div>
+    <div class="form-group">
+      <label>Salary</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="salary"
+        placeholder="Salary"
+      />
+      <small
+        class="form-text text-muted text-danger"
+        *ngIf="
+          addForm.controls.salary.touched &&
+          addForm.controls.salary.errors?.required
+        "
+        >Salary is required</small
+      >
+    </div>
+    <div class="form-group">
+      <label>DOJ</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="doj"
+        placeholder="DOJ"
+      />
+      <small
+        class="form-text text-muted text-danger"
+        *ngIf="
+          addForm.controls.doj.touched && addForm.controls.doj.errors?.required
+        "
+        >DOJ is required</small
+      >
+    </div>
+    <div class="form-group">
+      <label>Role</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="role"
+        placeholder="Role"
+      />
+    </div>
+    <small
+      class="form-text text-muted text-danger"
+      *ngIf="
+        addForm.controls.role.touched && addForm.controls.role.errors?.required
+      "
+      >Role is required</small
+    >
+    <div class="form-group">
+      <label>Skills</label>
+      <select class="form-control" formControlName="skills" multiple>
+        <option *ngFor="let skill of skills" [value]="skill">
+          {{ skill }}
+        </option>
+        <!-- <option value="Python">Python</option>
+        <option value="ReactJS">ReactJS</option>
+        <option value="Angular">Angular</option> -->
+      </select>
+      <small>Hold ctrl button to select multiple options</small>
+      <small
+        class="form-text text-muted text-danger"
+        *ngIf="
+          addForm.controls.skills.touched &&
+          addForm.controls.skills.errors?.required
+        "
+        >Skills is required</small
+      >
+    </div>
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      type="submit"
+      [disabled]="!addForm.valid"
+    >
+      Add Employee
+    </button>
+  </form>
+</div>
